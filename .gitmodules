@@ -1,0 +1,16 @@
+[submodule "Pecan/vendor/imgui"]
+	path = Pecan/vendor/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
+[submodule "Pecan/vendor/SDL"]
+	path = Pecan/vendor/SDL
+	url = https://github.com/libsdl-org/SDL.git
+	branch = release-2.30.x
+[submodule "Pecan/vendor/SDL_image"]
+	path = Pecan/vendor/SDL_image
+	url = https://github.com/libsdl-org/SDL_image.git
+	branch = release-2.8.x
+[submodule "Pecan/vendor/spdlog"]
+	path = Pecan/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+	branch = v1.x

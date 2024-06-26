@@ -1,0 +1,10 @@
+/cmake-build-debug
+/cmake-build-release
+/build
+
+/Pecan/vendor/
+/Pecan/Engine2d
+
+.DS_Store
+
+/.idea
