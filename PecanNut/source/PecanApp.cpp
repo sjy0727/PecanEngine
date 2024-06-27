@@ -1,5 +1,6 @@
 #include "Pecan.h"
 
+// 必须将EntryPoint放在这里，重复嵌套也没用
 #include "Runtime/Core/EntryPoint.h"
 
 #include "Sandbox2D.h"

@@ -6,7 +6,7 @@
 
 // #ifdef LG_PLATFORM_MACOS
 
-// extern LiteGine::Application* LiteGine::CreateApplication();
+// extern Pecan::Application* Pecan::CreateApplication();
 
 int main(int argc, char* argv[])
 {
@@ -15,18 +15,18 @@ int main(int argc, char* argv[])
     // LiteGine::Log::GetClientLogger()->info("Hello!");
     // LG_CORE_WARN("Initialized Logger!");
 
-    PC_PROFILE_BEGIN_SESSION("Startup", "LiteGineProfile-Startup.json");
+    PC_PROFILE_BEGIN_SESSION("Startup", "PecanProfile-Startup.json");
     auto app = Pecan::CreateApplication();
     PC_PROFILE_END_SESSION();
 
     // int magicNumber = 666;
     // LG_INFO("Sandbox start! magicNumber={0}", magicNumber);
 
-    PC_PROFILE_BEGIN_SESSION("Runtime", "LiteGineProfile-Runtime.json");
+    PC_PROFILE_BEGIN_SESSION("Runtime", "PecanProfile-Runtime.json");
     app->Run();
     PC_PROFILE_END_SESSION();
 
-    PC_PROFILE_BEGIN_SESSION("Shutdown", "LiteGineProfile-Shutdown.json");
+    PC_PROFILE_BEGIN_SESSION("Shutdown", "PecanProfile-Shutdown.json");
     delete app;
     PC_PROFILE_END_SESSION();
 

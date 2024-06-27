@@ -12,7 +12,7 @@
 #include "Runtime/ImGui/ImGuiLayer.h"
 #include "SDL.h"
 
-int main(int argc, char** argv);
+int main(int argc, char* argv[]);
 
 namespace Pecan
 {
@@ -35,7 +35,7 @@ namespace Pecan
         //        bool OnWindowResize(WindowResizeEvent& e);
 
     private:
-        friend int ::main(int argc, char** argv);
+        friend int ::main(int argc, char* argv[]);
         static Application* s_Instance;
 
     public:
