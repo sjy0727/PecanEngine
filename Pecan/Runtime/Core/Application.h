@@ -20,6 +20,7 @@ namespace Pecan
     {
     private:
         static SDL_Renderer* m_Renderer;
+        SDL_Event            m_Event;
 
     private:
         Scope<Window> m_Window;

@@ -1,4 +1,4 @@
-//#include "pcpch.h"
+// #include "pcpch.h"
 
 #include "Sandbox2D.h"
 
@@ -12,10 +12,9 @@ void Sandbox2D::OnAttach()
 {
     PC_PROFILE_FUNCTION();
 
-    //    m_Player = Pecan::Texture2D::Create(m_Renderer, "../../assets/sprites/knight.png");
     m_Map = Pecan::TileMap2D::Create();
 
-    m_Player.AddComponent<Pecan::PositionComponent>(0, 0);
+    m_Player.AddComponent<Pecan::TransformComponent>(0, 0);
     m_Player.AddComponent<Pecan::SpriteComponent>("../../assets/sprites/knight.png");
 }
 
@@ -43,10 +42,14 @@ void Sandbox2D::OnUpdate(Pecan::Timestep ts)
 
     m_Manager.Refresh();
     m_Manager.OnUpdate(ts);
-    if (m_Player.GetComponent<Pecan::PositionComponent>().x() > 400)
+
+    m_Player.GetComponent<Pecan::TransformComponent>().velocity = Pecan::Vector2D(1, 1);
+
+    if (m_Player.GetComponent<Pecan::TransformComponent>().position.x > 400)
     {
         m_Player.GetComponent<Pecan::SpriteComponent>().SetTexture("../../assets/sprites/fruit.png");
     }
+
     m_Manager.Draw();
 
     //    PC_TRACE("Position ({0}, {1})",
@@ -106,13 +109,13 @@ void Sandbox2D::OnImGuiRender()
 {
     PC_PROFILE_FUNCTION();
 
-//        ImGui::Begin("Settings");
-//        ImGui::Text("Renderer2D Stats:");
-//        ImGui::End();
-//
-//        ImGui::Begin("Hello");
-//        ImGui::Text("World");
-//        ImGui::End();
+    //        ImGui::Begin("Settings");
+    //        ImGui::Text("Renderer2D Stats:");
+    //        ImGui::End();
+    //
+    //        ImGui::Begin("Hello");
+    //        ImGui::Text("World");
+    //        ImGui::End();
 }
 
 void Sandbox2D::OnEvent(SDL_Event& e)

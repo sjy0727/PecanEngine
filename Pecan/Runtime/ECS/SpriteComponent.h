@@ -9,10 +9,10 @@ namespace Pecan
     class SpriteComponent : public Component
     {
     private:
-        PositionComponent* position;
-        SDL_Texture*       texture;
-        SDL_Rect           srcRect;
-        SDL_Rect           dstRect;
+        TransformComponent* transform;
+        SDL_Texture*        texture;
+        SDL_Rect            srcRect;
+        SDL_Rect            dstRect;
 
     public:
         SpriteComponent() = default;
@@ -26,7 +26,7 @@ namespace Pecan
 
         void OnAttach() override
         {
-            position = &m_Entity->GetComponent<PositionComponent>();
+            transform = &m_Entity->GetComponent<TransformComponent>();
 
             srcRect.x = srcRect.y = 0;
             srcRect.w = srcRect.h = 32;
@@ -35,8 +35,8 @@ namespace Pecan
 
         void OnUpdate(Timestep ts) override
         {
-            dstRect.x = position->x();
-            dstRect.y = position->y();
+            dstRect.x = (int)transform->position.x;
+            dstRect.y = (int)transform->position.y;
         }
 
         void Draw() override
